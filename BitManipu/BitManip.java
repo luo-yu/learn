@@ -24,6 +24,8 @@ public class BitManip {
 		System.out.println(Integer.toBinaryString(clearbit(y, 5)));
 		*/
 		
+		
+		System.out.println(Integer.toBinaryString(~0));
 		int z = 0b01111000;
 		
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 4,5)));
@@ -75,8 +77,16 @@ public class BitManip {
 		 */
 		
 		int left = ((~0)<<j+1);
+		
+		System.out.println("Left = " + Integer.toBinaryString(left));
+		
 		int right = ((1<<i)-1);
+		
+		System.out.println("Right = " + Integer.toBinaryString(right));
+		
 		int mask = left | right;
+		
+		System.out.println("Mask = " + Integer.toBinaryString(mask));
 		
 		int cleared = mask & num;
 		
