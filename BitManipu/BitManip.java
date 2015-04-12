@@ -44,12 +44,25 @@ public class BitManip {
 		
 		int xx = 0b011100000;
 		System.out.println(Integer.toBinaryString(clearBitsMSBtoI(xx, 7)));
-		*/
+		
 		
 		int x = 0b01101110;
 		System.out.println(Integer.toBinaryString(clearBitsItoZero(x, 2)));
+		
+		*/
+		
+		
+		int bb = 0b00100000;
+		System.out.println(Integer.toBinaryString(updateBits(bb, 1, 1)));
+		System.out.println(Integer.toBinaryString(updateBits(bb, 2, 1)));
 	}
 	
+	
+	
+	public static int updateBits(int num, int i, int v){
+		int mask = ~(1<<i);
+		return (num & mask) | (v<<i);
+	}
 	public static int clearBitsItoZero(int num, int i){
 		int mask = ~(-1 >>> (31-i));
 		
