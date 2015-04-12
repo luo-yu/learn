@@ -29,7 +29,7 @@ public class BitwiseOperation {
 		 *  into the MSB, instead of copying the sign bit, it is ideal
 		 *  for unsigned binary numbers, while arithmetic right shift
 		 *  is ideal for signed two's complement binary numbers
-		 *  
+		 *  In Java, >>> is used to perform logical right shift. 
 		 *  
 		 */
 		
