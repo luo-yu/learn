@@ -32,7 +32,7 @@ public class BitManip {
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 3,5)));
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 1,5)));
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 1,6)));
-		*/
+		
 		
 		int n = 0b10000000000;
 		int m = 0b10011;
@@ -40,6 +40,21 @@ public class BitManip {
 		int j = 6;
 		System.out.println(Integer.toBinaryString(insertBits(n, m, i, j)));
 		
+		*/
+		
+		int xx = 0b011100000;
+		System.out.println(Integer.toBinaryString(clearBitsMSBtoI(xx, 7)));
+		
+	}
+	
+	
+	public static int clearBitsMSBtoI(int num, int i){
+		/*
+		 * eg. input: 011000  i = 4
+		 *     output: 1000
+		 */
+		
+		return num & ((1<<i)-1);
 	}
 	
 	public static boolean getbit(int num, int i){
