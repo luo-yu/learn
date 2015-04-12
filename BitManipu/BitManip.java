@@ -64,10 +64,17 @@ public class BitManip {
 	
 	public static int clearBitRange(int num, int i, int j){
 		/*
-		 * 
+		 * eg. 01101101
+         
+         i = 2, j =5
+         
+         left = (~0)<<(5+1) = 11000000
+         right = (1<<i) - 1 = 00000100- 00000001 = 00000011
+         
+         left | right = 11000011
 		 */
 		
-		int left = (1<<j+1);
+		int left = ((~0)<<j+1);
 		int right = ((1<<i)-1);
 		int mask = left | right;
 		
