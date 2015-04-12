@@ -36,7 +36,54 @@ public class BitwiseOperation {
 		
 		
 		
+		System.out.println(printBinary2(0.75));
 	
+	}
+	
+	
+	/*public static void printBinary(double x){
+		System.out.print(".");
+		for(int i =0; i<31; i++){
+			x = x * 2;
+			if(x>=1){
+				System.out.print("1");
+				x=x-1;
+			}
+			else{
+				System.out.print("0");
+			}
+		}
+		
+		System.out.println();
+	}
+	
+	*/
+	public static String printBinary2(double x){
+		if(x>=1 || x<=0)
+			return "ERROR";
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(".");
+		
+		
+		while(x > 0){
+			
+			if(sb.length()>=32)
+				return "ERROR";
+			double r = x * 2;
+			
+			
+			if(r>=1){
+				sb.append(1);
+				x = r-1;
+			}
+			else{
+				sb.append(0);
+				x = r;
+			}
+		}
+		
+		return sb.toString();
 	}
 	
 }
