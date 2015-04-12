@@ -40,13 +40,21 @@ public class BitManip {
 		int j = 6;
 		System.out.println(Integer.toBinaryString(insertBits(n, m, i, j)));
 		
-		*/
+		
 		
 		int xx = 0b011100000;
 		System.out.println(Integer.toBinaryString(clearBitsMSBtoI(xx, 7)));
+		*/
 		
+		int x = 0b01101110;
+		System.out.println(Integer.toBinaryString(clearBitsItoZero(x, 2)));
 	}
 	
+	public static int clearBitsItoZero(int num, int i){
+		int mask = ~(-1 >>> (31-i));
+		
+		return num & mask;
+	}
 	
 	public static int clearBitsMSBtoI(int num, int i){
 		/*
