@@ -22,7 +22,7 @@ public class BitManip {
 		System.out.println(Integer.toBinaryString(clearbit(y, 0)));
 		System.out.println(Integer.toBinaryString(clearbit(y, 4)));
 		System.out.println(Integer.toBinaryString(clearbit(y, 5)));
-		*/
+		
 		
 		
 		System.out.println(Integer.toBinaryString(~0));
@@ -32,7 +32,13 @@ public class BitManip {
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 3,5)));
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 1,5)));
 		System.out.println(Integer.toBinaryString(clearBitRange(z, 1,6)));
+		*/
 		
+		int n = 0b10000000000;
+		int m = 0b10011;
+		int i = 2; 
+		int j = 6;
+		System.out.println(Integer.toBinaryString(insertBits(n, m, i, j)));
 		
 	}
 	
@@ -91,6 +97,37 @@ public class BitManip {
 		int cleared = mask & num;
 		
 		return cleared;
+	}
+	
+	
+	public static int insertBits(int n, int m, int i, int j){
+		/*
+		 *eg. n = 10000000000 
+		 *    m = 10011
+		 *    i = 2
+		 *    j = 6
+		 *    
+		 *    output: 10001001100
+		 */
+		
+		
+		//Clear n from inclusive i to inclusive j
+		
+		int left = (~0)<<(j+1);
+		int right = (1<<i)-1;
+		
+		int mask = left | right;
+		
+		int cleared_n = n & mask;
+		
+		//shift m to correct position
+		int shifted_m = m<<i;
+		
+		
+		//combine
+		
+		return cleared_n | shifted_m;
+		
 	}
 
 }
