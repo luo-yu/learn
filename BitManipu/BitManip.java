@@ -49,13 +49,51 @@ public class BitManip {
 		int x = 0b01101110;
 		System.out.println(Integer.toBinaryString(clearBitsItoZero(x, 2)));
 		
-		*/
+		
 		
 		
 		int bb = 0b00100000;
 		System.out.println(Integer.toBinaryString(updateBits(bb, 1, 1)));
 		System.out.println(Integer.toBinaryString(updateBits(bb, 2, 1)));
+		
+		*/
+		int a = 0b11011;
+		int b = 0b01111;
+		
+		System.out.println(bitsNeedtoBeFliped(a, b));
+		System.out.println(bitsNeedtoBeFliped2(a, b));
 	}
+	
+	
+	/**
+	 * Counts bits needed to flip a and b
+	 * 
+	 * eg. a = 11011
+	 *     b = 01111
+	 *     
+	 *     needs to flip two bits to make they are the same
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public static int bitsNeedtoBeFliped(int a, int b){
+		int count =0;
+		
+		for(int c =a^b; c!=0; c=c>>1){
+			count += c & 1;
+		}
+		
+		return count;
+	}
+	
+	public static int bitsNeedtoBeFliped2(int a, int b){
+		int count =0;
+		for(int c=a^b; c!=0; c=c & (c-1)){
+			count++;
+		}
+		return count;
+	}
+	
 	
 	
 	
