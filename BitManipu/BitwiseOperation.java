@@ -36,7 +36,18 @@ public class BitwiseOperation {
 		
 		
 		
-		System.out.println(printBinary2(0.75));
+		//System.out.println(printBinary2(0.75));
+		
+		int a =0b01111;
+		int b = 0b11011;
+		int c = a^b;
+		System.out.println(Integer.toBinaryString(c));
+		System.out.println(Integer.toBinaryString(c>>1));
+		c= c>>1;
+		c=c>>1;
+		c=c>>1;
+		System.out.println(Integer.toBinaryString(c));
+		
 	
 	}
 	
